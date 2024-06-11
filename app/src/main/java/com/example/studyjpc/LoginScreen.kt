@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -56,6 +59,28 @@ fun LoginScreen() {
                     text = "Log in",
                     style = MaterialTheme.typography.headlineMedium,
                     color = Color.Black
+                )
+                if(isSmallScreenHeight()) {
+                    Spacer(modifier = Modifier.fillMaxSize(0.05f))
+                } else {
+                    Spacer(modifier = Modifier.fillMaxSize(0.1f))
+                }
+                MyTextField(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    label = "Username",
+                    keyboardOptions = KeyboardOptions(),
+                    keyboardActions = KeyboardActions()
+                )
+                if(isSmallScreenHeight()) {
+                    Spacer(modifier = Modifier.fillMaxSize(0.05f))
+                } else {
+                    Spacer(modifier = Modifier.fillMaxSize(0.1f))
+                }
+                MyTextField(
+                    modifier = Modifier.padding(horizontal = 16.dp),
+                    label = "Password",
+                    keyboardOptions = KeyboardOptions(),
+                    keyboardActions = KeyboardActions()
                 )
             }
         }
